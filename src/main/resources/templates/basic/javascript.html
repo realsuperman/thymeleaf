@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 자바스크립트 인라인 사용 전 -->
+<script>
+    var username = "[[${user.username}]]" // 타임리프 값 전달하려면 script에 th:inline=javascript쓰자
+    var age = [[${user.age}]];
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+    //객체
+    var user = [[${user}]];
+</script>
+<!-- 자바스크립트 인라인 사용 후 -->
+<script th:inline="javascript">
+    // js 인라인 사용시 타임리프가 알아서 문자의 경우 쌍 따옴표를 붙여주는 작업을 알아서 해준다 객체는 json으로 넣어줌
+    var username = [[${user.username}]];
+    var age = [[${user.age}]];
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+    //객체
+    var user = [[${user}]];
+</script>
+
+</body>
+</html>

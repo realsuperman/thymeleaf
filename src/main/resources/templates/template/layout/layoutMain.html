@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="template/layout/base :: common_header(~{::title},~{::link})">
+        <title>메인 타이틀</title>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+    </head>
+    <body>
+        메인 컨텐츠
+    </body>
+</html>
+
+<!--
+    공통헤더가 파라미터로 가변적인 파라미터를 받으므로 이 곳에서는 사용될 title과 link를 넘겨준다
+    여기서 base.html로 바꿔치기가 되면서 + 본인의 title태그와 link태그는 유지한다
+-->
